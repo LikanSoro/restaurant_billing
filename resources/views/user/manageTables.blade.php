@@ -54,13 +54,13 @@
 
             <tbody>
               
-                @foreach ($items as $item)
+                @foreach ($aTables as $aTable)
                 <tr>
-                    <td>{{$item->item_id}}</td>
-                    <td>{{$item->i_name}}</td>
-                    <td>{{$item->i_desc}}</td>
-                    <td>{{$item->price}}</td>
-                    <td><a href="displayItem/{{$item->item_id}}">Delete</a></td>
+                    <td>{{$aTable->id}}</td>
+                    <td>{{$aTable->tableName}}</td>
+                    {{-- <td>{{$aTable->i_desc}}</td>
+                    <td>{{$aTable->price}}</td> --}}
+                    <td><a href="displayItem/{{$aTable->id}}">Delete</a></td>
                     {{-- <td><a href="{{route('delete/$item->item_id')}}">Delete</a></td> --}}
                 </tr>
                 @endforeach  
