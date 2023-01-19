@@ -35,7 +35,7 @@
                 <h3>Table-Details</h3>
             </div>
             <div class="col">
-                <a href="manageTables" class="btn btn-success btn-lg-3" role="button" style="margin-left: 450px;">Add Table</a>
+                <a href="manageTables/addTable" class="btn btn-success btn-lg-3" role="button" style="margin-left: 450px;">Add Table</a>
             </div>
         </div>
 
@@ -45,7 +45,7 @@
             <thead>
               <tr>
                 <th scope="col">Table_id</th>
-                <th scope="col">Table Name</th>
+    
                 <th scope="col">Occupied</th>
                 <th scope="col">Bill Paid</th>
                 <th scope="col">action</th>
@@ -54,13 +54,14 @@
 
             <tbody>
               
-                @foreach ($items as $item)
+                @foreach ($tables as $table)
                 <tr>
-                    <td>{{$item->item_id}}</td>
-                    <td>{{$item->i_name}}</td>
-                    <td>{{$item->i_desc}}</td>
-                    <td>{{$item->price}}</td>
-                    <td><a href="displayItem/{{$item->item_id}}">Delete</a></td>
+                    <td>{{$table->table_id}}</td>
+                    <td>{{$table->occupied}}</td>
+                    <td>{{$table->billPaid}}</td>
+                    <td><a href="mangeTables/{{$table->table_id}}">Delete</a></td>
+                    <td><a href="#">Generate Bill</a></td>
+
                     {{-- <td><a href="{{route('delete/$item->item_id')}}">Delete</a></td> --}}
                 </tr>
                 @endforeach  

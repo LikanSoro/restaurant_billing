@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AddTable extends Model
+class manageorders extends Model
 {
-
     use HasFactory;
-    protected $table = "add_table";
-    protected $primaryKey = "table_id";
+    protected $table = "manage_orders";
+    protected $primaryKey = "order_id";
 }

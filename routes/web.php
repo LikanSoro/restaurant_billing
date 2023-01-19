@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\itemsController;
 use App\Http\Controllers\itemCategoryController;
+use App\Http\Controllers\addTableController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,9 +46,9 @@ Route::get('/displayOrder', function () {
     return view('user/displayOrders');
 });
 
-Route::get('/manageTables', function () {
-    return view('user/manageTables');
-});
+// Route::get('/manageTables', function () {
+//     return view('user/manageTables');
+// });
 
 Route::get('/addTable', function () {
     return view('user/addTable');
@@ -78,8 +80,9 @@ Route::get('/displayItemCategory',[itemCategoryController::class, 'displayItemC'
 Route::get('/displayItemCategory/{ic_id}',[itemCategoryController::class, 'deleteItemC'])->name('delete');
 
 //Adding tables one by one
-Route::get('/addTable', [addTableController::class, 'addTable']);
-//   aadafafa
-//Abhi is here asdasa
-//for add item category
 
+Route::get('manageTables/addTable', [addTableController::class, 'addTable']);
+// Showuing all tables
+Route::get('/manageTables', [addTableController::class, 'displayTables']);
+// Deleting a table
+Route::get('/mangeTables/{t_id}', [addTableController::class, 'dTable'])->name('deletes');

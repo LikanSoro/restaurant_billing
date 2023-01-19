@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('add_table', function (Blueprint $table) {
-            $table->id();
-            $table->string('tableName',10);
+            $table->id('table_id');
             $table->boolean('occupied')->nullable()->default(false);
             $table->boolean('billPaid')->nullable()->default(false);
             $table->timestamps();
