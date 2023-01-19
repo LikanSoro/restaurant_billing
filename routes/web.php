@@ -81,3 +81,5 @@ Route::get('/displayItemCategory/{ic_id}',[itemCategoryController::class, 'delet
 Route::get('/addTable', [addTableController::class, 'addTable']);
 //   aadafafa
 //Abhi is here asdasa
+//for add item category
+
