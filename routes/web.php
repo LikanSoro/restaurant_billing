@@ -5,8 +5,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\itemsController;
 use App\Http\Controllers\itemCategoryController;
 use App\Http\Controllers\addTableController;
-
-
+use App\Http\Controllers\manageOrders;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,3 +85,5 @@ Route::get('manageTables/addTable', [addTableController::class, 'addTable']);
 Route::get('/manageTables', [addTableController::class, 'displayTables']);
 // Deleting a table
 Route::get('/mangeTables/{t_id}', [addTableController::class, 'dTable'])->name('deletes');
+
+Route::get('/addOrder', [manageOrders::class, 'ats']);

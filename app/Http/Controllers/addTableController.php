@@ -26,5 +26,4 @@ class addTableController extends Controller
 
         return redirect('manageTables');
     }
-    
 }

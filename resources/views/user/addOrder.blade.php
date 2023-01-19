@@ -45,9 +45,11 @@
                                         <h4>Please Select Table No </h4>
                                     </label>
                                     <div class="form-group column col-md-12">
-                                        <select class="form-select" name="Item_name" required>
-                                        
-
+                                        <select class="form-select" name="table_id" required>
+                                            <option value="">Select Table</option>
+                                            @foreach ($table_id as $table)
+                                            <option value="{{$table->table_id}}">{{$table->table_id}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
