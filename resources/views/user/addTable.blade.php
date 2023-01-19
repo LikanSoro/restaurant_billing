@@ -23,7 +23,8 @@
         <div class="container-fluid">
     <div class="container mt-3">
         <h2>Add New Restaurant Table</h2>
-        <form action="" method="POST">
+        <form action="{{url('/')}}/addTable" method="POST">
+            @csrf
             {{-- <div class="row">
                 <div class="mb-3 mt-3">
                     <label for="name" class="form-label">No of Tables:</label>
@@ -33,7 +34,7 @@
             <div class="row">
                 <div class="mb-3 mt-3">
                     <label for="name" class="form-label">Table Name:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter Table Name" name="name">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Table Name" name="tableName">
                 </div>
             </div>
             <input type="submit" name="submit" value="Save" class="btn btn-success"></input>
