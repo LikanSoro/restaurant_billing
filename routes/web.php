@@ -27,13 +27,13 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('dash');
+// });
 
-Route::get('/register', function () {
-    return view('register');
-});
+// Route::get('/register', function () {
+//     return view('register');
+// });
 
 Route::get('/dashboard', function () {
     return view('dash');
@@ -100,3 +100,8 @@ Route::post('/',[manageOrders::class, 'generate_bill'])->name('generate_bill');
 
 Route::get('/generate_bill',[manageOrders::class, 'displayBills']);
 Route::get('/generate_bill/{order_id}',[manageOrders::class, 'printInvoice'])->name('print');
+Route::post('/generate_bill',[manageOrders::class, 'generate_bill'])->name('generate_bill');
+
+//Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
