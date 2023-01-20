@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('manage_orders', function (Blueprint $table) {
             $table->id('order_id');
+           
             $table->unsignedBigInteger('table_id');
             $table->foreign('table_id')->references('table_id')->on('add_table');
             $table->unsignedBigInteger('item_id');
             $table->foreign('item_id')->references('item_id')->on('add_item');
             $table->unsignedBigInteger('staff_id');
             $table->foreign('staff_id')->references('staff_id')->on('add_staff');
-            $table->integer('quantity');
             $table->integer('totalPrice');
             $table->integer('tax');
             $table->integer('totalPriceWithTax');
