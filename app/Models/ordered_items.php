@@ -15,6 +15,6 @@ class ordered_items extends Model
         return $this->belongsTo(orders::class, 'order_id');
     }
     public function Items(){
-        return $this->belongsTo(Item::class, 'item_id');
+        return $this->belongsTo(Item::class, 'item_id' , 'item_id');
     }
 }

@@ -78,10 +78,10 @@ class manageOrders extends Controller
     }
     public function printInvoice($order_id){
 
-        $order = orders::with('customers','ordered_items','Item')->where('order_id', $order_id )->get();
-      
-        // $ordered_items = ordered_items::with('Items')->where('order_id', $order_id )->get();
-        $data = compact('order');
+        $order = orders::with('customers')->where('order_id', $order_id )->get();
+        
+        $ordered_items = ordered_items::with('Items')->where('order_id', $order_id )->get();
+        $data = compact('order','ordered_items');
         return view('print')->with($data);
     }
 }
