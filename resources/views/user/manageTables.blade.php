@@ -35,7 +35,7 @@
                 <h3>Table-Details</h3>
             </div>
             <div class="col">
-                <a href="manageTables/addTable" class="btn btn-success btn-lg-3" role="button" style="margin-left: 450px;">Add Table</a>
+                <a href="addTable" class="btn btn-success btn-lg-3" role="button" style="margin-left: 450px;">Add Table</a>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
               
                 @foreach ($tables as $table)
                 <tr>
-                    <td>{{$table->table_id}}</td>
+                    <td>{{$table->id}}</td>
                     <td>{{$table->occupied}}</td>
                     <td>{{$table->billPaid}}</td>
                     <td><a href="mangeTables/{{$table->table_id}}">Delete</a></td>
