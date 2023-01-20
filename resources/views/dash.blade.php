@@ -120,7 +120,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                {{-- <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
                             <h3 class="fs-2"></h3>
@@ -128,7 +128,7 @@
                         </div>
                       <a href="discountdetails"><i class="fa fa-file-text fs-1 primary-text border rounded-full secondary-bg p-3"></i></a> 
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
@@ -136,10 +136,10 @@
                             <h3 class="fs-2"></h3>
                             <p class="fs-5">  <h5>Generate Bill</h5> </p>
                         </div>
-                      <a href="billgenerate"><i class="	fa fa-file-pdf-o fs-1 primary-text border rounded-full secondary-bg p-3"></i></a> 
+                      <a href="generate_bill"><i class="	fa fa-file-pdf-o fs-1 primary-text border rounded-full secondary-bg p-3"></i></a> 
                     </div>
                 </div>
-                <div class="col-md-3">
+                {{-- <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
                             <h3 class="fs-2"></h3>
@@ -147,7 +147,7 @@
                         </div>
                       <a href="dailyreport"><i class="fa fa-bar-chart fs-1 primary-text border rounded-full secondary-bg p-3"></i></a> 
                     </div>
-                </div>
+                </div> --}}
                 {{-- <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>

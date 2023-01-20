@@ -102,6 +102,6 @@ Route::get('/generate_bill',[manageOrders::class, 'displayBills']);
 Route::get('/generate_bill/{order_id}',[manageOrders::class, 'printInvoice'])->name('print');
 Route::post('/generate_bill',[manageOrders::class, 'generate_bill'])->name('generate_bill');
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

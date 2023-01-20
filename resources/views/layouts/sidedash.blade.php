@@ -4,7 +4,7 @@
 
             <div class="list-group list-group-flush my-3 ">
 
-                <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent text-white second-text ">
+                <a href="/home" class="list-group-item list-group-item-action bg-transparent text-white second-text ">
                     <i class="fa fa-tachometer p-2" aria-hidden="true"></i>Dashboard</a>
 
                 <a href="/displayStaff" class="list-group-item list-group-item-action bg-transparent text-white second-text">
@@ -24,11 +24,11 @@
 
                 <a href="/generate_bill" class="list-group-item list-group-item-action bg-transparent text-white second-text ">
                         <i class="fa fa-file-pdf-o p-2" aria-hidden="true"></i>Generate Bill</a>
-                
+{{--                 
                 <a href="/dailyreport" class="list-group-item list-group-item-action bg-transparent text-white second-text ">
                     <i class="fa fa-bar-chart p-2" aria-hidden="true"></i>Instant Report</a>
 
-                
+                 --}}
  
                 {{-- <a href="{{ route('logout') }}" class="list-group-item list-group-item-action bg-transparent text-white second-text ">
                 <i class="fa fa-sign-out p-2" aria-hidden="true"></i>Logout</a>  --}}
