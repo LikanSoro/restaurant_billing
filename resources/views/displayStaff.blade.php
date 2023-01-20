@@ -28,8 +28,7 @@
                 <a href="addStaff" class="btn btn-success btn-lg-3" role="button" style="margin-left: 450px;">Add Staff</a>
                 <!-- <a href="dash" class="btn btn-success ml-3" role="button">Back</a> -->
             </div>
-        </div>
-        //model for edit staff 
+        </div> 
         <div class="modal fade" id="editStaff" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -38,7 +37,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form action="editStaff" method="POST">
+                  <form action="{{ route('editStaff'.$id) }}" method="POST">
                     @csrf
                     <div class="form-group ">
                         <label for="name" class="">Name:</label>
@@ -100,6 +99,7 @@
                     {{-- <td><a href="displayStaff/{{$staff->staff_id}}">Update</a></td> --}}
                     <td><a href="displayStaff/{{$staff->staff_id}}">Delete</a></td>
                     <td><a href="editStaff/{{$staff->staff_id}}">Edit</a></td>
+
                     
                 </tr>
                 @endforeach  

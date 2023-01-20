@@ -36,9 +36,15 @@ class staffController extends Controller
         return redirect('displayStaff');
        
     }
-    public function editStaff($id){
+    public function editStaff(Request $request,$id){
         $staff = Add_Staff::where('staff_id',$id)->first();
-        $data = compact('staff');
-        return view('editStaff')->with($data);
+        $staff->name = $request['name'];
+        $staff->job_role = $request['jobrole'];
+        
+        $staff->contact = $request['contact'];
+        $staff->address = $request['address'];
+        $staff->save();
+        return redirect('displayStaff');
+        
     }
 }
