@@ -30,8 +30,8 @@
 
                 
  
-                <a href="rmslogout" class="list-group-item list-group-item-action bg-transparent text-white second-text ">
-                <i class="fa fa-sign-out p-2" aria-hidden="true"></i>Logout</a> 
+                {{-- <a href="{{ route('logout') }}" class="list-group-item list-group-item-action bg-transparent text-white second-text ">
+                <i class="fa fa-sign-out p-2" aria-hidden="true"></i>Logout</a>  --}}
 
             </div>
         </div>
