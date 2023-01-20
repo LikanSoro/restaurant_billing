@@ -116,7 +116,7 @@
                             <h3 class="fs-2"></h3>
                             <p class="fs-5">  <h5>Orders</h5>  </p>
                         </div>
-                        <a href="addOrder"><i class="fa fa-clipboard fs-1 primary-text border rounded-full secondary-bg p-3"></i></a>
+                        <a href="addCustomer"><i class="fa fa-clipboard fs-1 primary-text border rounded-full secondary-bg p-3"></i></a>
                     </div>
                 </div>
 

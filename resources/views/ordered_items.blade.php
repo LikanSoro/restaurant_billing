@@ -20,6 +20,7 @@
                     <div class="card bg-white mb-3 text-center shadow p-3 mb-3 rounded h-50">
                         <div class="container-fluid mt-3">
                            <form action="{{ route('order_items') }}" method="POST">
+                            
                                @csrf {{-- select table --}}
                                 
                                 {{-- select item --}}
@@ -44,12 +45,12 @@
                                     <input id="quantity" class="input-group" type="number" name="quantity" value="">
                                     </div>
                                 </div>
-                                
-                                    <div class="row" style="margin-left:30px ;">
-                                        <div class="form-group col-md-4 ml-5">
-                                            <input type="hidden" name="customer_id" value="{{ $customer_id }}">
-                                           <button type="submit" class="btn btn-success" id="add" name="add">Add</button>
-                                     </div>
+                                    <div class="row">
+                                        <div class="form-group text-right mt-5">
+                                            <input type="hidden" name="order_id" value="{{$o_id}}">
+                                            <button type="submit" class="btn btn-success" id="add" name="add">Add</button>
+                                        </div>
+                                    
                                 </div>
                                 </div>
                             </form>
@@ -58,42 +59,61 @@
                     </div>
                 </div>
             </center>
+          
         </div>
-        @if(1>0)
-        <div class="card col-3">
+        @if($order!= null)
+        <div class="container-fluid m-auto">
+        <div class="card col-6 center">
             <div class="row">
-                <div class="col-md">
+                
                     <div class="card bg-white mb-3 text-center shadow p-3 mb-3 rounded">
-                        <div class="container-fluid mt-3">
+                       
                             <div class="row">
                                 <div class="col-md">
                                     <h4>Order Details</h4>
                                 </div>
+                            </div>
                                 <div class="col-md">
                                     <table class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
-                                                <th>Table No</th>
                                                 <th>Item Name</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
-                                                <th>Total</th>
+                                    
                                             </tr>
                                         </thead>
                                         <tbody id="table_data">
-                                            <tr>
-                                               {{ 1}}
+                                         @foreach ($order as $o )
+                                                <tr>
+                                               <td>{{$o->Items->i_name}}</td>
+                                               
+                                                <td>{{$o->quantity}}</td>
+                                                <td>{{$o->price}}</td>
                                             </tr>
+                                                @endforeach
                                         </tbody>
                                     </table>
+                                    <h3>Total Price: {{$totalPrice}}</h3>
                             </div>
                             <hr>
+                            
+                            <div class="row">
+                                <div class="col-md">
+                                    <form action="" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="order_id" value="{{$o_id}}">
+                                        <input type="hidden" name="totalPrice" value="{{$totalPrice}}">
+                                        <button type="submit" class="btn btn-success" id="add" name="add">Generate Bill</button>
+                                    </form>
+                                </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </div>
-    </div>    
+    </div>
+@elseif ($order==null)
     
 @endif
 </div>

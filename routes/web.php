@@ -5,7 +5,10 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\itemsController;
 use App\Http\Controllers\itemCategoryController;
 use App\Http\Controllers\addTableController;
+use App\Http\Controllers\customerController;
 use App\Http\Controllers\manageOrders;
+use App\Http\Controllers\ordered_item;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,8 +40,8 @@ Route::get('/dashboard', function () {
 });
 
 
-Route::get('/addOrder', function () {
-    return view('user/addOrder');
+Route::get('/addCustomer', function () {
+    return view('user/addCustomer');
 });
 
 Route::get('/displayOrder', function () {
@@ -52,8 +55,8 @@ Route::get('/displayOrder', function () {
 Route::get('/addTable', function () {
     return view('user/addTable');
 });
-
-
+//add customer and redirect to add order
+Route::post('/addCustomer',[customerController::class, 'store'])->name('Customer');
 
 //for add staffs
 Route::get('/addStaff',[staffController::class, 'index']);
@@ -86,4 +89,9 @@ Route::get('/manageTables', [addTableController::class, 'displayTables']);
 // Deleting a table
 Route::get('/mangeTables/{t_id}', [addTableController::class, 'dTable'])->name('deletes');
 
-Route::get('/addOrder', [manageOrders::class, 'ats']);
+Route::get('/addOrder/{id}', [manageOrders::class, 'ats']);
+
+Route::post('/addOrder', [manageOrders::class, 'store'])->name('store_order');
+
+Route::get('/ordered_items/{order_id}', [ordered_item::class, 'in']);
+Route::post('/ordered_items', [ordered_item::class, 'store'])->name('order_items');
