@@ -52,6 +52,7 @@
                                 <th scope="col">Table Id</th>
                                 <th scope="col">Staff Id</th>
                                 <th scope="col">Total Price</th>
+                                <th scope="col">Tax</th>
                                 <th scope="col">Price With Tax</th>
                                 <th scope="col">Payment Status</th>
                                 <th scope="col">Date</th>
@@ -68,6 +69,7 @@
                                     <td>{{$order->table_id}}</td>
                                     <td>{{$order->AddStaff->name}}</td>
                                     <td>{{$order->totalPrice}}</td>
+                                    <td>{{$order->tax}}%</td>
                                     <td>{{$order->totalPriceWithTax}}</td>
                                     <td>@if($order->billPaid==0)
                                         <span class="badge bg-danger">Not paid</span>

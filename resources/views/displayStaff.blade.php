@@ -29,49 +29,9 @@
                 <!-- <a href="dash" class="btn btn-success ml-3" role="button">Back</a> -->
             </div>
         </div> 
-        <div class="modal fade" id="editStaff" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Edit Staff</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form action="{{ route('editStaff'.$id) }}" method="POST">
-                    @csrf
-                    <div class="form-group ">
-                        <label for="name" class="">Name:</label>
-                        <input style="font-size: 18px;" class="input-group input-group-sm p-1" type="text" name="name" class="form-control" id="" required placeholder="Enter staff name">
-                    </div><br>
-                    
-                    <div class="mb-3">
-                        <label for="jobRole" class="form-label">Job role:</label>
-                        <textarea name="jobrole" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-                    </div><br>
-
-                    <div class="mb-3">
-                    <label for="joiningdate" class="form-label">Joining Date:</label>
-                    <input type="date" name="joiningdate">
-                </div><br>
-
-                    <div class="form-group ">
-                        <label for="mobilenumber" class="">Contact:</label>
-                        <input style="font-size: 18px;" class="input-group input-group-sm p-1" type="number" name="contact" class="form-control" id="" required placeholder="Enter Mobile Number">
-                    </div>
-                    <br>
-                    
-                    <div class="form-group">
-                        <label for="Address" class="">Address:</label>
-                        <textarea name="address" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-                    </div>
-                    <br>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                      </div>
-                    </form>
-                </div>
-                
+              
+        
+         
 
         <table class="table">
             <thead>
@@ -98,7 +58,7 @@
                     <td>{{$staff->address}}</td>
                     {{-- <td><a href="displayStaff/{{$staff->staff_id}}">Update</a></td> --}}
                     <td><a href="displayStaff/{{$staff->staff_id}}">Delete</a></td>
-                    <td><a href="editStaff/{{$staff->staff_id}}">Edit</a></td>
+                    
 
                     
                 </tr>
