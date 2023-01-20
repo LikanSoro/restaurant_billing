@@ -114,7 +114,7 @@
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
                             <h3 class="fs-2"></h3>
-                            <p class="fs-5">  <h5>Orders</h5>  </p>
+                            <p class="fs-5">  <h5>New Order</h5>  </p>
                         </div>
                         <a href="addCustomer"><i class="fa fa-clipboard fs-1 primary-text border rounded-full secondary-bg p-3"></i></a>
                     </div>
@@ -134,7 +134,7 @@
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
                             <h3 class="fs-2"></h3>
-                            <p class="fs-5">  <h5>Generate Bill</h5> </p>
+                            <p class="fs-5">  <h5>All Orders</h5> </p>
                         </div>
                       <a href="generate_bill"><i class="fa fa-file-pdf-o fs-1 primary-text border rounded-full secondary-bg p-3"></i></a> 
                     </div>

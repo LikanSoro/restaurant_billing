@@ -64,7 +64,8 @@ Route::post('/addStaff',[staffController::class, 'addStaffDetails']);
 Route::get('/displayStaff',[staffController::class, 'displayStaff']); 
 //for delete staff
 Route::get('/displayStaff/{staff_id}',[staffController::class, 'deleteStaff'])->name('delete');
-Route::get('/editStaff/{staff_id}',[staffController::class, 'editStaff'])->name('editStaff');
+Route::get('/editStaff/{staff_id}',[staffController::class, 'editStaff']);
+Route::post('/editStaff',[staffController::class, 'update'])->name('editStaff');
 //for items
 Route::get('/addItem',[itemsController::class, 'index']);
 Route::post('/addItem',[itemsController::class, 'addItemDetails']);

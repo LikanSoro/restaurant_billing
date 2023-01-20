@@ -34,13 +34,16 @@ class staffController extends Controller
 
         Add_Staff::where('staff_id',$id)->delete();
         return redirect('displayStaff');
-       
     }
-    public function editStaff(Request $request,$id){
+    public function editStaff($id){
         $staff = Add_Staff::where('staff_id',$id)->first();
-        $staff->name = $request['name'];
-        $staff->job_role = $request['jobrole'];
-        
+        $data = compact('staff');
+        return view('editStaff')->with($data);
+    }
+    public function update(Request $request){
+        $id = $request['id'];
+        $staff = Add_Staff::where('staff_id',$id)->first();
+        $staff->name = $request['s_name'];
         $staff->contact = $request['contact'];
         $staff->address = $request['address'];
         $staff->save();

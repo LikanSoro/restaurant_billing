@@ -35,16 +35,17 @@
         <div class="row mx-5 my-4">
                    <center> <div class="col ">
                    <h1 style="font-family: cursive">MENU</h1>
-                    </div></center>
+                    </div>
+                
     
-                    <div class="col" >
-                    <a href="addItem" style="margin-left:300px ;" class="btn btn-success" role="button">Add New Item</a>
+                    <div class="mt-5" >
+                    <a href="addItem" class="btn btn-info" role="button">Add New Item</a>
                 </div>
-        </div>
-
+                </div>
+            </center>
         <center>
 
-            <div class="col-lg-6 mt-4">
+            <div class="col-lg-10 mt-4">
                 <div class="card bg-white mb-3 text-center shadow p-3 mb-3 rounded h-50">
                     <div class="container-fluid mt-3">
                         <table class="table">
@@ -66,7 +67,7 @@
                                     <td>{{$item->i_name}}</td>
                                     <td>{{$item->i_desc}}</td>
                                     <td>{{$item->price}}</td>
-                                    <td><a href="displayItem/{{$item->item_id}}">Delete</a></td>
+                                    <td><a class="btn btn-danger" href="displayItem/{{$item->item_id}}">Delete</a></td>
                                     {{-- <td><a href="{{route('delete/$item->item_id')}}">Delete</a></td> --}}
                                 </tr>
                                 @endforeach  

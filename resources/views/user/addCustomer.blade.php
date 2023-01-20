@@ -19,13 +19,22 @@
     @include('layouts.sidedash')
         <!-- sidebar -->
         <div class="container-fluid">
-    <div class="container mt-3">
-        <h2>Add Customer</h2>
+            <div class="row g-2 my-3">
+                <center>
+                <div class="col">
+                    <h1>Add Customer</h1>
+                </div>
+                </center>
+    </div>
+    <center>
+    <div class="col-lg-6 mt-5">
+        <div class="card bg-white mb-3 shadow p-3 mb-3 rounded h-50">
+            <div class="container-fluid mt-3">
         <form action="{{route('Customer')}}" method="post">
             @csrf
             <div class="row">
                 <div class="mb-3 mt-3">
-                    <label for="name" class="form-label">customer Name:</label>
+                    <label for="name" class="form-label">Customer Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter name" name="c_name">
                 </div>
                 <div class="mb-3">
@@ -42,11 +51,11 @@
                     </select>
                 </div> --}}
             </div>
-            <input type="submit" name="submit" value="Next" class="btn btn-success">
+            <input type="submit" class="btn btn-primary" name="submit" value="Next" class="btn btn-success">
            
         </form>
     </div></div></div>
-
+</center>
 </body>
 
 </html>

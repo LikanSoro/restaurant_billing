@@ -28,7 +28,7 @@
                                     <label for="item" class="form-label">
                                         <h4>Please Select Items</h4>
                                     </label>
-                                    <div class="form-group column col-md-12">
+                                    <div class="form-group column col-md-12 mb-2">
                                         <select class="form-select" id="item_id" name="item_id" required>
                                             <option value="">Select Item</option>
                                             @foreach ($item as $s)
@@ -41,15 +41,16 @@
                                     <label for="item" class="form-label">
                                         <h4>Quantity</h4>
                                     </label>
-                                    <div class="form-group column col-md-12">
-                                    <input id="quantity" class="input-group" type="number" name="quantity" value="">
+                                    <div class="form-group column col-lg-12">
+                                    <input id="quantity" class="form-control" type="number" name="quantity" value="">
                                     </div>
                                 </div>
+                                <hr>
                                     <div class="row">
-                                        <div class="form-group text-right mt-5">
+                                        <div class="form-group text-right my-2">
                                             <input type="hidden" name="order_id" value="{{$o_id}}">
                                             <input type="hidden" name="customer_id" value="{{$c_id}}">
-                                            <button type="submit" class="btn btn-success" id="add" name="add">Add</button>
+                                            <button type="submit" class="btn btn-info" id="add" name="add">Add</button>
                                         </div>
                                     
                                 </div>
@@ -59,20 +60,20 @@
                         </div>
                     </div>
                 </div>
-            </center>
+           
           
         </div>
         @if($order!= null)
-        <div class="container-fluid m-auto">
-        <div class="card col-6 center">
-            <div class="row">
+        <div class="container-fluid my-5">
+        <div class="card col-8 bg-white mb-3 text-center shadow p-3 mb-3 rounded">
+            <div class="row gap-2">
                 
-                    <div class="card bg-white mb-3 text-center shadow p-3 mb-3 rounded">
+                    
                        
                             <div class="row">
                                 <div class="col-md">
-                                    <h4>Order Details</h4>
-                                    <h3>Customer Name: {{ $c_id }}</h3>
+                                    <h3>Order Details</h3>
+                                    <h5>Customer Id: {{ $c_id }}</h5>
                                 </div>
                             </div>
                                 <div class="col-md">

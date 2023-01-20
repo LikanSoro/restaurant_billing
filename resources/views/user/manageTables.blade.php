@@ -18,37 +18,28 @@
     <!-- Sidebar -->
     @include('layouts.sidedash')
         <!-- sidebar -->
-    <!-- <div class="container-fluid">    
         <div class="container-fluid">
-            <div class="row g-3 my-2">
-                <div class="col-md-3">
-                    <h3>Table-Details</h3>
-                </div>
-                <div class="col-md-3"><a href="rms_addtable.php" class="btn btn-success" role="button" style="margin-left: 0px;">Add_Table</a></div>
-                <a href="index.php" class="btn btn-success ml-3" role="button">Back</a>
-
-            </div>
-        </div> -->
-        <div class="container-fluid">
-        <div class="row g-3 my-2">
+        <div class="row g-2 my-3">
+            <center>
             <div class="col">
-                <h3>Table-Details</h3>
+                <h1>Table-Details</h1>
             </div>
-            <div class="col">
-                <a href="manageTables/addTable" class="btn btn-success btn-lg-3" role="button" style="margin-left: 450px;">Add Table</a>
+            <div class="mt-3">
+                <a href="manageTables/addTable" class="btn btn-info btn-lg-3" role="button">Add Table</a>
             </div>
+        </center>
         </div>
 
         <!-- table -->
-        
+        <center>
+        <div class="col-lg-3 mt-4">
+            <div class="card bg-white mb-3 text-center shadow p-3 mb-3 rounded">
+                <div class="container-fluid mt-3">
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">Table_id</th>
-    
-                {{-- <th scope="col">Occupied</th>
-                <th scope="col">Bill Paid</th> --}}
-                <th scope="col">action</th>
+                <th >Table ID</th>
+                <th >Action</th>
               </tr>
             </thead>
 
@@ -57,17 +48,17 @@
                 @foreach ($tables as $table)
                 <tr>
                     <td>{{$table->table_id}}</td>
-                    {{-- <td>{{$table->occupied}}</td>
-                    <td>{{$table->billPaid}}</td> --}}
-                    <td><a href="mangeTables/{{$table->table_id}}">Delete</a></td>
-                    {{-- <td><a href="#">Generate Bill</a></td> --}}
-
-                    {{-- <td><a href="{{route('delete/$item->item_id')}}">Delete</a></td> --}}
+                   
+                    <td><a class="btn btn-danger" href="mangeTables/{{$table->table_id}}">Delete</a></td>
+                    
                 </tr>
                 @endforeach  
             </tbody>
           </table>
-
+        </div>
+    </div>
+</div>
+</center>
     </div>
     </div>
 </body>

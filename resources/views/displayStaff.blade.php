@@ -20,19 +20,25 @@
     
         <!-- sidebar -->
         <div class="container-fluid">
-        <div class="row g-3 my-2">
-            <div class="col">
-                <h3>Staff-Details</h3>
-            </div>
-            <div class="col">
-                <a href="addStaff" class="btn btn-success btn-lg-3" role="button" style="margin-left: 450px;">Add Staff</a>
-                <!-- <a href="dash" class="btn btn-success ml-3" role="button">Back</a> -->
-            </div>
-        </div> 
-              
         
+          <div class="row g-2 my-3">
+            <center>
+            <div class="col">
+                <h1>Staff-Details</h1>
+            </div>
          
+            <div class="mt-4">
+                <a href="addStaff" class="btn btn-info btn-lg-5" >Add Staff</a>
+            </div>
+          </center>
+        </div> 
+        
+        
+        <center>
 
+          <div class="col-lg-10 mt-4">
+              <div class="card bg-white mb-3 text-center shadow p-3 mb-3 rounded h-50">
+                  <div class="container-fluid mt-3">
         <table class="table">
             <thead>
               <tr>
@@ -57,14 +63,15 @@
                     <td>{{$staff->contact}}</td>
                     <td>{{$staff->address}}</td>
                     {{-- <td><a href="displayStaff/{{$staff->staff_id}}">Update</a></td> --}}
-                    <td><a href="displayStaff/{{$staff->staff_id}}">Delete</a></td>
-                    
-
-                    
+                    <td><a class="btn btn-danger" href="displayStaff/{{$staff->staff_id}}">Delete</a></td>
+                    <td><a class="btn btn-info" href="editStaff/{{$staff->staff_id}}">Edit</a></td>
+  
                 </tr>
                 @endforeach  
             </tbody>
           </table>
+        </div>
+        </div>
         </div>
 
 </body>

@@ -34,7 +34,7 @@
         <div class="container-fluid">
         <div class="row mx-5 my-4">
                    <center> <div class="col ">
-                   <h1 style="font-family: cursive">Oreders</h1>
+                   <h1 style="font-family: cursive">All Orders</h1>
                     </div></center>
     
         </div>
