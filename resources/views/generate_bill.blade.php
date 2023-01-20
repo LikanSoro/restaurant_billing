@@ -67,7 +67,7 @@
                                     <td>{{$order->customer_id}}</td>
                                     <td>{{$order->table_id}}</td>
                                     <td>{{$order->staff_id}}</td>
-                                    <td>{{$order->total_price}}</td>
+                                    <td>{{$order->totalPrice}}</td>
                                     <td>{{$order->totalPriceWithTax}}</td>
                                     <td>@if($order->payment_status==0)
                                         <span class="">Not Paid</span>

@@ -35,9 +35,7 @@
                         
                             @foreach ($order_item->ordered_items as $item)
                             <tr>
-                                @foreach($item->Item as $i)
-                                <td>{{ $i->i_name }}</td>
-                                @endforeach
+                            {{-- </td>{{ $item->Item->i_name }}</td> --}}
                             
                             <td>{{ $item->item_id }}</td>
                             <td>{{ $item->quantity }}</td>

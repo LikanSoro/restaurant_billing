@@ -46,8 +46,8 @@
               <tr>
                 <th scope="col">Table_id</th>
     
-                <th scope="col">Occupied</th>
-                <th scope="col">Bill Paid</th>
+                {{-- <th scope="col">Occupied</th>
+                <th scope="col">Bill Paid</th> --}}
                 <th scope="col">action</th>
               </tr>
             </thead>
@@ -57,10 +57,10 @@
                 @foreach ($tables as $table)
                 <tr>
                     <td>{{$table->table_id}}</td>
-                    <td>{{$table->occupied}}</td>
-                    <td>{{$table->billPaid}}</td>
+                    {{-- <td>{{$table->occupied}}</td>
+                    <td>{{$table->billPaid}}</td> --}}
                     <td><a href="mangeTables/{{$table->table_id}}">Delete</a></td>
-                    <td><a href="#">Generate Bill</a></td>
+                    {{-- <td><a href="#">Generate Bill</a></td> --}}
 
                     {{-- <td><a href="{{route('delete/$item->item_id')}}">Delete</a></td> --}}
                 </tr>
