@@ -47,19 +47,6 @@
             <div class="col-lg-6 mt-4">
                 <div class="card bg-white mb-3 text-center shadow p-3 mb-3 rounded h-50">
                     <div class="container-fluid mt-3">
-                        {{-- <form action="" method="POST">
-                            <div class="form-group "><label for="catagory" class="form-label">
-                                    <h3>Please Select Item Catagory Here</h3>
-                                </label></div>
-                            <div class="form-group column col-md-12"><select class="form-select" name="Item_cat" required>
-                                    
-
-                                </select></div>
-
-                            <div class="form-group col-md-4 ml-5">
-                                <input type="submit" style="margin-left: 250px;" class="btn btn-success col-lg-6" value="Search" name="submit">
-                            </div>
-                        </form> --}}
                         <table class="table">
                             <thead>
                               <tr>

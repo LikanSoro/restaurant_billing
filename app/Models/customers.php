@@ -12,6 +12,6 @@ class customers extends Model
     protected $primaryKey = "customer_id";
 
     public function orders(){
-        return $this->belongsTo(orders::class, 'customer_id');
+        return $this->hasMany(orders::class, 'customer_id');
     }
 }
