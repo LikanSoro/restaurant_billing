@@ -20,7 +20,7 @@ class orders extends Model
         return $this->hasMany(AddTable::class , 'table_id', 'table_id');
     }
     public function AddStaff(){
-        return $this->hasMany(Add_Staff::class , 'staff_id', 'staff_id');
+        return $this->belongsTo(Add_Staff::class , 'staff_id', 'staff_id');
     }
     public function Item(){
         return $this->hasMany(Item::class, 'item_id', 'item_id');

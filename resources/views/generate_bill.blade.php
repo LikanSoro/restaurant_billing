@@ -41,14 +41,14 @@
 
         <center>
 
-            <div class="col-lg-6 mt-4">
+            <div class="col-lg-11 mt-4">
                 <div class="card bg-white mb-3 text-center shadow p-3 mb-3 rounded h-50">
                     <div class="container-fluid mt-3">
                         <table class="table">
                             <thead>
                               <tr>
                                 <th scope="col">Order Id</th>
-                                <th scope="col">Customer Id</th>
+                                <th scope="col">Customer</th>
                                 <th scope="col">Table Id</th>
                                 <th scope="col">Staff Id</th>
                                 <th scope="col">Total Price</th>
@@ -64,19 +64,19 @@
                                 @foreach ($order as $order)
                                 <tr>
                                     <td>{{$order->order_id}}</td>
-                                    <td>{{$order->customer_id}}</td>
+                                    <td>{{$order->customers->c_name}}</td>
                                     <td>{{$order->table_id}}</td>
-                                    <td>{{$order->staff_id}}</td>
+                                    <td>{{$order->AddStaff->name}}</td>
                                     <td>{{$order->totalPrice}}</td>
                                     <td>{{$order->totalPriceWithTax}}</td>
-                                    <td>@if($order->payment_status==0)
-                                        <span class="">Not Paid</span>
+                                    <td>@if($order->billPaid==0)
+                                        <span class="badge bg-danger">Not paid</span>
                                         @else
-                                        <span class="btn-success">Paid</span>
+                                        <span class="badge bg-success">Paid</span>
                                         @endif
                                     </td>
                                     <td>{{$order->updated_at}}</td>
-                                    <td><a class="btn btn-warning" href="generate_bill/{{$order->order_id}}">Bill Paid</a></td>
+                                    <td><a class="btn btn-warning" href="billPaid/{{$order->order_id}}">Bill Paid</a></td>
                                     <td><a class="btn btn-success" href="generate_bill/{{$order->order_id}}">Print Invoice</a></td>
                                         
                                     {{-- <td><a href="{{route('delete/$item->item_id')}}">Delete</a></td> --}}

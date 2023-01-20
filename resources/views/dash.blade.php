@@ -136,7 +136,7 @@
                             <h3 class="fs-2"></h3>
                             <p class="fs-5">  <h5>Generate Bill</h5> </p>
                         </div>
-                      <a href="generate_bill"><i class="	fa fa-file-pdf-o fs-1 primary-text border rounded-full secondary-bg p-3"></i></a> 
+                      <a href="generate_bill"><i class="fa fa-file-pdf-o fs-1 primary-text border rounded-full secondary-bg p-3"></i></a> 
                     </div>
                 </div>
                 {{-- <div class="col-md-3">

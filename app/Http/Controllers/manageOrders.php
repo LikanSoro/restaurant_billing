@@ -84,4 +84,10 @@ class manageOrders extends Controller
         $data = compact('order','ordered_items');
         return view('print')->with($data);
     }
+    public function billPay($order_id){
+        $order = orders::where('order_id', $order_id )->first();
+        $order->billpaid = 1;
+        $order->save();
+        return redirect('/generate_bill');
+    }
 }

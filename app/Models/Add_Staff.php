@@ -13,6 +13,6 @@ class Add_Staff extends Model
     protected $primaryKey = "staff_id";
 
     public function orders(){
-        return $this->belongsTo(orders::class, 'staff_id');
+        return $this->hasMany(orders::class, 'staff_id');
     }
 }

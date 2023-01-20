@@ -64,7 +64,7 @@ Route::post('/addStaff',[staffController::class, 'addStaffDetails']);
 Route::get('/displayStaff',[staffController::class, 'displayStaff']); 
 //for delete staff
 Route::get('/displayStaff/{staff_id}',[staffController::class, 'deleteStaff'])->name('delete');
-
+Route::get('/editStaff/{staff_id}',[staffController::class, 'editStaff'])->name('edit');
 //for items
 Route::get('/addItem',[itemsController::class, 'index']);
 Route::post('/addItem',[itemsController::class, 'addItemDetails']);
@@ -100,8 +100,11 @@ Route::post('/',[manageOrders::class, 'generate_bill'])->name('generate_bill');
 
 Route::get('/generate_bill',[manageOrders::class, 'displayBills']);
 Route::get('/generate_bill/{order_id}',[manageOrders::class, 'printInvoice'])->name('print');
+Route::get('/billPaid/{order_id}',[manageOrders::class, 'billPay'])->name('billpaid');
+
 Route::post('/generate_bill',[manageOrders::class, 'generate_bill'])->name('generate_bill');
 
-Auth::routes();
+
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

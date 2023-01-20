@@ -36,5 +36,9 @@ class staffController extends Controller
         return redirect('displayStaff');
        
     }
-    
+    public function editStaff($id){
+        $staff = Add_Staff::where('staff_id',$id)->first();
+        $data = compact('staff');
+        return view('editStaff')->with($data);
+    }
 }
