@@ -48,6 +48,7 @@
                                     <div class="row">
                                         <div class="form-group text-right mt-5">
                                             <input type="hidden" name="order_id" value="{{$o_id}}">
+                                            <input type="hidden" name="customer_id" value="{{$c_id}}">
                                             <button type="submit" class="btn btn-success" id="add" name="add">Add</button>
                                         </div>
                                     
@@ -71,6 +72,7 @@
                             <div class="row">
                                 <div class="col-md">
                                     <h4>Order Details</h4>
+                                    <h3>Customer Name: {{ $c_id }}</h3>
                                 </div>
                             </div>
                                 <div class="col-md">
@@ -100,11 +102,12 @@
                             
                             <div class="row">
                                 <div class="col-md">
-                                    <form action="" method="POST">
+                                    <form action="{{ route('generate_bill') }}" method="POST">
                                         @csrf
+                                        <input type="hidden" name="customer_id" value="{{$c_id}}">
                                         <input type="hidden" name="order_id" value="{{$o_id}}">
                                         <input type="hidden" name="totalPrice" value="{{$totalPrice}}">
-                                        <button type="submit" class="btn btn-success" id="add" name="add">Generate Bill</button>
+                                        <button type="submit" class="btn btn-success" id="add" name="add" >Generate Bill</button>
                                     </form>
                                 </div>
                         </div>

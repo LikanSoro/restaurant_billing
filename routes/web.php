@@ -93,5 +93,7 @@ Route::get('/addOrder/{id}', [manageOrders::class, 'ats']);
 
 Route::post('/addOrder', [manageOrders::class, 'store'])->name('store_order');
 
-Route::get('/ordered_items/{order_id}', [ordered_item::class, 'in']);
+Route::get('/ordered_items/{order_id}/{customer_id}', [ordered_item::class, 'in']);
 Route::post('/ordered_items', [ordered_item::class, 'store'])->name('order_items');
+
+Route::post('/generate_bill',[manageOrders::class, 'generate_bill'])->name('generate_bill');

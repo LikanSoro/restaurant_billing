@@ -54,11 +54,20 @@ class manageOrders extends Controller
         $ordered_items->price = $price * $request->quantity;
         $ordered_items->save();
         
-        return redirect('ordered_items/'.$id);
+        return redirect('ordered_items/'.$id.'/'.$request->customer_id);
     }
     // public function displayOrder($order_id){
     //     $order = ordered_items::where('order_id', $order_id )->get();
     //     $data = compact('order');
     //     return view('user/displayOrders')->with($data);
     // }
+    public function generate_bill(Request $request){
+        $order_id=$request->order_id;
+        $customer_id=$request->customer_id;
+        $order = orders::where('order_id', $order_id )->first();
+        $order->totalPrice = $request->totalPrice;
+        $order->totalPriceWithTax =$request->totalPrice* 18/100 + $request->totalPrice;
+        $order->save();
+        return redirect('/addCustomer');
+    }
 }
