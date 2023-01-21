@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('add_table', function (Blueprint $table) {
             $table->id('table_id');
             $table->boolean('occupied')->nullable()->default(false);
-            $table->boolean('billPaid')->nullable()->default(false);
+            // $table->boolean('billPaid')->nullable()->default(false);
             $table->timestamps();
         }); 
     }
