@@ -34,11 +34,11 @@
             @csrf
             <div class="row">
                 <div class="mb-3 mt-3">
-                    <label for="name" class="form-label">Customer Name:</label>
+                    <label for="name" class="form-label"><h5>Customer Name:</h5></label>
                     <input type="text" class="form-control" id="name" placeholder="Enter name" name="c_name">
                 </div>
                 <div class="mb-3">
-                    <label for="description" class="form-label">Customer Number</label>
+                    <label for="description" class="form-label"><h5>Customer Number</h5></label>
                     <input type="text" class="form-control" id="description" placeholder="Enter description" name="number">
                 </div>
                 <input type="hidden" value="" name="Item_catagory">

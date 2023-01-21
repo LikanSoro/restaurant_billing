@@ -1,5 +1,5 @@
 
-    <nav class="navbar navbar-light bg-light" style="linear-gradient(to left, #e0eafc, #cfdef3);">
+    <nav class="navbar navbar-light bg-light" style="background-image: linear-gradient(to right bottom, #d6cfda, #c5bdd5, #afacd1, #919ece, #6b91cb);">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="public/images/kitchen.png" alt="" width="30" height="24" class="d-inline-block align-text-top">

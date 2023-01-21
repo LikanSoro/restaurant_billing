@@ -1,5 +1,5 @@
-<div style="background-image: linear-gradient(to bottom, #7b898c, #98a1a5, #b5b9be, #d2d3d6, #eeeeee); height: 100vh;" class="d-flex" id="wrapper">
-        <div style="background-image: linear-gradient(to right bottom, #213657, #22516a, #366a76, #578381, #7d9b8d);; width: 20vw;" class="" id="sidebar-wrapper">
+<div style="background-image: linear-gradient(to top, #7d8ea8, #93a1b7, #aab5c7, #c1c9d7, #d8dee7); height: 100vh;" class="d-flex" id="wrapper">
+        <div style="background-image: linear-gradient(to bottom, #304566, #2b354d, #222535, #17171f, #050505); width: 20vw;" class="" id="sidebar-wrapper">
 
 
             <div class="list-group list-group-flush my-3 ">
