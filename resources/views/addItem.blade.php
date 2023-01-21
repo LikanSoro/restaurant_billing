@@ -20,7 +20,12 @@
         <!-- sidebar -->
         <div class="container-fluid">
     <div class="container mt-3">
-        <h2>Add Item</h2>
+        <h2>Add Menu Item</h2>
+        <hr>
+        <center>
+            <div class="col-lg-6 mt-5">
+                <div class="card bg-white mb-3 shadow p-3 mb-3 rounded h-50">
+                    <div class="container-fluid mt-3">
         <form action="{{url('/')}}/addItem" method="POST">
             @csrf
             <div class="row">
@@ -47,11 +52,11 @@
                     </select>
                 </div> --}}
             </div>
-            <input type="submit" name="submit" value="Save" class="btn btn-success">
-            <a href="menucatagoriwise.php" class="btn btn-success" role="button">Back</a>
+            <input type="submit" name="submit" value="Save" class="btn btn-primary">
+            
         </form>
     </div></div></div>
-
+        </center>
 </body>
 
 </html>

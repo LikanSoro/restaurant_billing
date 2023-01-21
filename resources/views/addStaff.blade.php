@@ -21,13 +21,20 @@
     @include('layouts.sidedash')
         <!-- sidebar -->
         <div class="container-fluid">
-            <div class="container mt-3">
+            <center>
+            <div class="container my-3">
                 <h2>Add New Staff</h2>
+            </div></center>
+            <center>
+                <div class="col-lg-6 mt-5">
+                    <div class="card bg-white mb-3 shadow p-3 mb-3 rounded h-50">
+                        <div class="container-fluid mt-3">
+                
                 <form action="{{url('/')}}/addStaff" method="POST">
                     @csrf
                     <div class="row">
 
-                        <div class="form-group ">
+                        <div class="form-group">
                             <label for="name" class="">Name:</label>
                             <input style="font-size: 18px;" class="input-group input-group-sm p-1" type="text" name="name" class="form-control" id="" required placeholder="Enter staff name">
                         </div><br>
@@ -56,16 +63,16 @@
                         
 
                         </div>
-                        <input type="submit" name="submit" value="Add" class="btn btn-success mt-3">
+                        <input type="submit" name="submit" value="Add" class="btn btn-primary mt-3">
 
-                        <a href="displayStaff" class="btn btn-success mt-3" role="button">Back</a>
+                       
 
                         
                 </form>
             </div>
         </div>
     </div>
-
+</center>
 </body>
 
 </html>

@@ -22,7 +22,12 @@
         <!-- sidebar -->
         <div class="container-fluid">
             <div class="container mt-3">
-                <h2>Add New Staff</h2>
+                <h2>Edit Staff Details</h2>
+
+                <center>
+                    <div class="col-lg-6 mt-5">
+                        <div class="card bg-white mb-3 shadow p-3 mb-3 rounded h-50">
+                            <div class="container-fluid mt-3">
                 <form action="{{ route('editStaff') }}" method="POST">
                     @csrf
                     <div class="row">
@@ -53,10 +58,6 @@
                         </div>
                         <input type="hidden" name="id" value="{{ $staff->staff_id }}">
                         <input type="submit" name="submit" value="Update" class="btn btn-success mt-3">
-
-                        <a href="displayStaff" class="btn btn-success mt-3" role="button">Back</a>
-
-                        
                 </form>
             </div>
         </div>
