@@ -39,6 +39,7 @@
             <thead>
               <tr>
                 <th >Table ID</th>
+                <th >Table Status</th>
                 <th >Action</th>
               </tr>
             </thead>
@@ -48,7 +49,13 @@
                 @foreach ($tables as $table)
                 <tr>
                     <td>{{$table->table_id}}</td>
-                   
+                    <td>
+                        @if ($table->occupied == 0)
+                            <span class="badge bg-success">Available</span>
+                        @else
+                            <span class="badge bg-danger">Occupied</span>
+                        @endif
+                    
                     <td><a class="btn btn-danger" href="mangeTables/{{$table->table_id}}">Delete</a></td>
                     
                 </tr>

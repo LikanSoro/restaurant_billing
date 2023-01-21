@@ -22,7 +22,7 @@ class manageOrders extends Controller
     //     //get item id for dropdown list
     //     $item = orders::with('Item')->get();
        $customer_id=$id;
-        $table= AddTable::all();
+        $table= AddTable::where('occupied', 0)->get();
         $staff= Add_Staff::all();
         $item= Item::all();
         $data = compact('table', 'staff', 'item' ,'customer_id');
@@ -53,7 +53,9 @@ class manageOrders extends Controller
         $ordered_items->quantity = $request->quantity;
         $ordered_items->price = $price * $request->quantity;
         $ordered_items->save();
-        
+        $table= AddTable::where('table_id', $request->table_id)->first();
+        $table->occupied = 1;
+        $table->save();
         return redirect('ordered_items/'.$id.'/'.$request->customer_id);
     }
     // public function displayOrder($order_id){
@@ -86,9 +88,12 @@ class manageOrders extends Controller
     }
     public function billPay($order_id){
         $order = orders::where('order_id', $order_id )->first();
-        
         $order->billpaid = 1;
         $order->save();
+        $t_id=$order->table_id;
+        $table= AddTable::where('table_id', $t_id)->first();
+        $table->occupied = 0;
+        $table->save();
         return redirect('/generate_bill');
     }
 }
