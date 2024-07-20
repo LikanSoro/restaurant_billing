@@ -8,6 +8,7 @@ use App\Http\Controllers\addTableController;
 use App\Http\Controllers\customerController;
 use App\Http\Controllers\manageOrders;
 use App\Http\Controllers\ordered_item;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,13 +28,13 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-// Route::get('/login', function () {
-//     return view('dash');
-// });
+Route::get('/login', function () {
+    return view('dash');
+});
 
-// Route::get('/register', function () {
-//     return view('register');
-// });
+Route::get('/register', function () {
+    return view('register');
+});
 
 Route::get('/dashboard', function () {
     return view('dash');
@@ -56,31 +57,31 @@ Route::get('/addTable', function () {
     return view('user/addTable');
 });
 //add customer and redirect to add order
-Route::post('/addCustomer',[customerController::class, 'store'])->name('Customer');
+Route::post('/addCustomer', [customerController::class, 'store'])->name('Customer');
 
 //for add staffs
-Route::get('/addStaff',[staffController::class, 'index']);
-Route::post('/addStaff',[staffController::class, 'addStaffDetails']);
-Route::get('/displayStaff',[staffController::class, 'displayStaff']); 
+Route::get('/addStaff', [staffController::class, 'index']);
+Route::post('/addStaff', [staffController::class, 'addStaffDetails']);
+Route::get('/displayStaff', [staffController::class, 'displayStaff']);
 //for delete staff
-Route::get('/displayStaff/{staff_id}',[staffController::class, 'deleteStaff'])->name('delete');
-Route::get('/editStaff/{staff_id}',[staffController::class, 'editStaff']);
-Route::post('/editStaff',[staffController::class, 'update'])->name('editStaff');
+Route::get('/displayStaff/{staff_id}', [staffController::class, 'deleteStaff'])->name('delete');
+Route::get('/editStaff/{staff_id}', [staffController::class, 'editStaff']);
+Route::post('/editStaff', [staffController::class, 'update'])->name('editStaff');
 //for items
-Route::get('/addItem',[itemsController::class, 'index']);
-Route::post('/addItem',[itemsController::class, 'addItemDetails']);
-Route::get('/displayItem',[itemsController::class, 'displayItem']); 
+Route::get('/addItem', [itemsController::class, 'index']);
+Route::post('/addItem', [itemsController::class, 'addItemDetails']);
+Route::get('/displayItem', [itemsController::class, 'displayItem']);
 //for delete item
-Route::get('/displayItem/{item_id}',[itemsController::class, 'deleteItem'])->name('delete');
+Route::get('/displayItem/{item_id}', [itemsController::class, 'deleteItem'])->name('delete');
 
 
 //for add item category
 
-Route::get('/addItemCategory',[itemCategoryController::class, 'index']);
-Route::post('/addItemCategory',[itemCategoryController::class, 'addItemCat']);
-Route::get('/displayItemCategory',[itemCategoryController::class, 'displayItemC']);
+Route::get('/addItemCategory', [itemCategoryController::class, 'index']);
+Route::post('/addItemCategory', [itemCategoryController::class, 'addItemCat']);
+Route::get('/displayItemCategory', [itemCategoryController::class, 'displayItemC']);
 //for delete item category
-Route::get('/displayItemCategory/{ic_id}',[itemCategoryController::class, 'deleteItemC'])->name('delete');
+Route::get('/displayItemCategory/{ic_id}', [itemCategoryController::class, 'deleteItemC'])->name('delete');
 
 //Adding tables one by one
 
@@ -97,15 +98,15 @@ Route::post('/addOrder', [manageOrders::class, 'store'])->name('store_order');
 Route::get('/ordered_items/{order_id}/{customer_id}', [ordered_item::class, 'in']);
 Route::post('/ordered_items', [ordered_item::class, 'store'])->name('order_items');
 
-Route::post('/',[manageOrders::class, 'generate_bill'])->name('generate_bill');
+Route::post('/', [manageOrders::class, 'generate_bill'])->name('generate_bill');
 
-Route::get('/generate_bill',[manageOrders::class, 'displayBills']);
-Route::get('/generate_bill/{order_id}',[manageOrders::class, 'printInvoice'])->name('print');
-Route::get('/billPaid/{order_id}',[manageOrders::class, 'billPay'])->name('billpaid');
+Route::get('/generate_bill', [manageOrders::class, 'displayBills']);
+Route::get('/generate_bill/{order_id}', [manageOrders::class, 'printInvoice'])->name('print');
+Route::get('/billPaid/{order_id}', [manageOrders::class, 'billPay'])->name('billpaid');
 
-Route::post('/generate_bill',[manageOrders::class, 'generate_bill'])->name('generate_bill');
+Route::post('/generate_bill', [manageOrders::class, 'generate_bill'])->name('generate_bill');
 
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
